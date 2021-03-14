@@ -1,4 +1,4 @@
-package main
+package guess
 
 import (
 	"fmt"
@@ -11,7 +11,7 @@ import (
 	"log"
 )
 
-func main(){
+func GuessGame(){
 
 	seconds := time.Now().Unix()
 	rand.Seed(seconds)
@@ -29,7 +29,6 @@ func main(){
 		if err != nil {
 			log.Fatal("Error while read stdin", err)
 		}
-		
 		candidate, err := strconv.Atoi( strings.TrimSpace(input) )
 
 		if err != nil {
